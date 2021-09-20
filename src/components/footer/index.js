@@ -7,18 +7,18 @@ const Index = () => {
     <footer className="py-12 text-center ">
       <div className="container sm:flex sm:gap-2">
         <p className="font-serif text-gray mb-5 sm:mb-0">Follow our socials!</p>
-        <ul className="flex gap-2 w-full items-center justify-center  sm:w-auto">
+        <ul className="flex  w-full items-center justify-center  sm:w-auto">
           <li>
             <a href="/">
               <img src={Twitter} alt="twitter" />
             </a>
           </li>
-          <li>
+          <li className="ml-2">
             <a href="/">
               <img src={Instagram} alt="instagram" />
             </a>
           </li>
-          <li>
+          <li className="ml-2">
             <a href="/">
               <img src={Discord} alt="discord" />
             </a>

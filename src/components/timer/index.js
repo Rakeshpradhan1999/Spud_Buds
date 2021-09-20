@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import moment from "moment";
 const Index = () => {
-  //   const [value, setValue] = useState(0);
-  //   console.log(value);
   const difference = +new moment("2021-9-30 12:00:00").utc() - +new Date();
 
   const [days, setDays] = useState(0);

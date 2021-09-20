@@ -21,7 +21,7 @@ const HeroSection = () => {
               10000 randomly generated NFTs from 350 traits.
             </p>
 
-            <div className="mt-10 flex gap-6 justify-center items-center md:justify-start ">
+            <div className="mt-10 flex  justify-center items-center md:justify-start ">
               <a href="/" className=" bg-white inline-block px-6 py-3">
                 <div className="flex items-center ">
                   <div className="mr-2 w-6">
@@ -30,7 +30,7 @@ const HeroSection = () => {
                   <div className="text-xs capitalize text-twitter">Twitter</div>
                 </div>
               </a>
-              <a href="/" className=" bg-white inline-block px-6 py-3">
+              <a href="/" className=" bg-white inline-block px-6 py-3 ml-6">
                 <span className="flex items-center ">
                   <span className="mr-2 w-6">
                     <img src={Discord} alt="icons" />
