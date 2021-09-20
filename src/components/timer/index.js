@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import moment from "moment";
-import Countdown from "react-countdown";
+
 const Index = () => {
   //   const [value, setValue] = useState(0);
   //   console.log(value);
@@ -32,7 +32,6 @@ const Index = () => {
       <Time time={hours} title="hrs" />
       <Time time={minutes} title="min" />
       <Time time={seconds} title="sec" />
-      <Countdown date={Date.now() + difference} />
     </div>
   );
 };
