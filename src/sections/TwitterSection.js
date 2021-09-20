@@ -69,9 +69,9 @@ const ListItem = ({
     className={`mt-5 bg-bg1 text-text1 ${color}  py-5 px-6 capitalize sm:flex sm:justify-between sm:items-center`}
     style={{ border: "12px solid white" }}
   >
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between w-full">
       <p className=" text-sm">{title}</p>
-      <div className=" social-icon text-2xl ">
+      <div className=" text-2xl">
         <i class="fab fa-twitter"></i>
       </div>
     </div>
