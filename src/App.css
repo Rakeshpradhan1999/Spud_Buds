@@ -1,7 +1,28 @@
 body {
   color: white;
-}
-.layout {
   background-image: url(./assets/images/Group\ 1000001999.png);
   background-size: cover;
+  animation: backgroundScroll 30s linear infinite;
+  animation-fill-mode: forwards;
+  cursor: url(./assets/images/potato.png), auto;
+}
+
+@-webkit-keyframes backgroundScroll {
+  0% {
+    background-position: -1780px -690px;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes backgroundScroll {
+  0% {
+    background-position: -1780px -690px;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }

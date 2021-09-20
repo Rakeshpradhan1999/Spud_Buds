@@ -7,7 +7,7 @@ const CountSection = () => {
         <TextBox />
         <TextBox num="1000" text="pre sell supply" />
         <TextBox num="0.0777" text="mint price" />
-        <TextBox num="350 TRAITS" text="total traded" />
+        <TextBox num="350 TRAITS" text="total TRAITS" />
       </div>
     </section>
   );
