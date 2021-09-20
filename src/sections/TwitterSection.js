@@ -36,7 +36,7 @@ const ListItem = ({
     <div className="flex items-center justify-between w-full">
       <p className=" text-sm">{title}</p>
       <div className=" text-2xl">
-        <i class="fab fa-twitter"></i>
+        <i className="fab fa-twitter"></i>
       </div>
     </div>
   </div>
