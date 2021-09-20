@@ -1,33 +1,69 @@
 import { useEffect, useState } from "react";
-import moment from "moment";
+// import moment from "moment";
 const Index = () => {
-  const difference = +new moment("2021-9-30 12:00:00").utc() - +new Date();
+  // const difference = +new moment("2021-9-30 12:00:00").utc() - +new Date();
 
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [timerDays, setTimerDays] = useState(0);
+  const [timerHours, setTimerHours] = useState(0);
+  const [timerMinutes, setTimerMinutes] = useState(0);
+  const [timerSeconds, setTimerSeconds] = useState(0);
+
+  // useEffect(() => {
+  //   const id = setTimeout(() => {
+  //     if (difference > 0) {
+  //       setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
+  //       setHours(Math.floor((difference / (1000 * 60 * 60)) % 24));
+  //       setMinutes(Math.floor((difference / 1000 / 60) % 60));
+  //       setSeconds(Math.floor((difference / 1000) % 60));
+  //     }
+  //   }, 1000);
+
+  //   return () => {
+  //     clearTimeout(id);
+  //   };
+  // });
+
+  let interval;
+
+  const startTimer = () => {
+    const countDownDate = new Date("2021-9-30 12:00:00").getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (24 * 60 * 60 * 1000));
+      const hours = Math.floor(
+        (distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
+      const seconds = Math.floor((distance % (60 * 1000)) / 1000);
+
+      if (distance < 0) {
+        // Stop Timer
+
+        clearInterval(interval.current);
+      } else {
+        // Update Timer
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
+      }
+    });
+  };
 
   useEffect(() => {
-    const id = setTimeout(() => {
-      if (difference > 0) {
-        setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
-        setHours(Math.floor((difference / (1000 * 60 * 60)) % 24));
-        setMinutes(Math.floor((difference / 1000 / 60) % 60));
-        setSeconds(Math.floor((difference / 1000) % 60));
-      }
-    }, 1000);
-
-    return () => {
-      clearTimeout(id);
-    };
+    startTimer();
   });
+
   return (
     <div className="flex">
-      <Time time={days} title="days" />
-      <Time time={hours} title="hrs" />
-      <Time time={minutes} title="min" />
-      <Time time={seconds} title="sec" />
+      <Time time={timerDays} title="days" />
+      <Time time={timerHours} title="hrs" />
+      <Time time={timerMinutes} title="min" />
+      <Time time={timerSeconds} title="sec" />
     </div>
   );
 };
